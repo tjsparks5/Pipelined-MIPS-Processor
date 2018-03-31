@@ -1,0 +1,13 @@
+// Assembly version of program with hazards
+addi $9, $0, 0x0025
+addi $8, $0, 0x0004
+addi $7, $0, 0x0000
+sw $7, 0x0000($8)
+loop:
+lw $7, 0x0000($8)
+beq $7, $9, end
+addi $7, $7, 0x0001
+sw $7, 0x0000($8)
+j loop
+end:
+j end
